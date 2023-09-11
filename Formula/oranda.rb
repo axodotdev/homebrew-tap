@@ -2,13 +2,13 @@ class Oranda < Formula
   desc "🎁 generate beautiful landing pages for your projects"
   homepage "https://opensource.axo.dev/oranda"
   if Hardware::CPU.type == :arm
-    url "https://github.com/axodotdev/oranda/releases/download/v0.4.0-prerelease.2/oranda-aarch64-apple-darwin.tar.gz"
-    sha256 "515d5818a1ed7a096affcf2ba79f6741cdba48e3bd63a6ca31bb488646c442d8"
+    url "https://github.com/axodotdev/oranda/releases/download/v0.4.0/oranda-aarch64-apple-darwin.tar.gz"
+    sha256 "71c91ff19409bba503069dba194e606030c326943b75502a36f4fd71b732f046"
   else
-    url "https://github.com/axodotdev/oranda/releases/download/v0.4.0-prerelease.2/oranda-x86_64-apple-darwin.tar.gz"
-    sha256 "fb0f34b2239b3e820930605f106fd660ef3c81f6ab5b8bf03cfa195aa91fdc27"
+    url "https://github.com/axodotdev/oranda/releases/download/v0.4.0/oranda-x86_64-apple-darwin.tar.gz"
+    sha256 "ad4488434b9f6068b325d51aaf9993d50c2840a34b79d4e0c5bd651639a31f68"
   end
-  version "0.4.0-prerelease.2"
+  version "0.4.0"
   license "MIT OR Apache-2.0"
 
   def install
