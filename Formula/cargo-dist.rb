@@ -4,21 +4,21 @@ class CargoDist < Formula
   on_macos do
     on_arm do
       url "https://github.com/axodotdev/cargo-dist/releases/download/v0.6.0/cargo-dist-aarch64-apple-darwin.tar.xz"
-      sha256 "d306f432c9e33eb7cffcc290c869ae1bd00aae529fd5d2739659f8129abf2415"
+      sha256 "0659c30003825c7dacc1457fe6e7b1f0390649d0d5f782f80e3b4acd320e5e70"
     end
     on_intel do
       url "https://github.com/axodotdev/cargo-dist/releases/download/v0.6.0/cargo-dist-x86_64-apple-darwin.tar.xz"
-      sha256 "823e3e545ed681eb72aaff0ee64ccc75fb11389158ebb633de65f2d0aaade828"
+      sha256 "7b3449e4eaa87c7c04f3e35063b42cd424d0402b1b70c41760565583e572f586"
     end
   end
   on_linux do
     on_arm do
       url "https://github.com/axodotdev/cargo-dist/releases/download/v0.6.0/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "62b704b225c5ee35ac0b1cff3b25fb1c2d7b0961f4eea4fab02e1ee2c3f05708"
+      sha256 "157a0fd9bc13b385413e60aab7e96d31ad5d2bc5831006789e465d0c4b49e18d"
     end
     on_intel do
       url "https://github.com/axodotdev/cargo-dist/releases/download/v0.6.0/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "8f25be146ab66f63b98f74177b004957694212a253f2326cf4f7358d51ceb4ae"
+      sha256 "b1b650bcb5dbb6fe2d1c5c60471a810efec5b1b2e5489519513d78af5ed00ae0"
     end
   end
   license "MIT OR Apache-2.0"
