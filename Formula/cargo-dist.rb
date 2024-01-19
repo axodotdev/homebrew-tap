@@ -1,24 +1,24 @@
 class CargoDist < Formula
   desc "Shippable application packaging for Rust"
-  version "0.7.2"
+  version "0.8.0"
   on_macos do
     on_arm do
-      url "https://github.com/axodotdev/cargo-dist/releases/download/v0.7.2/cargo-dist-aarch64-apple-darwin.tar.xz"
-      sha256 "498da9b7c9d09fe876d7782e30a6c6e875d78fdaf830cded44c025dbe65dfd1b"
+      url "https://github.com/axodotdev/cargo-dist/releases/download/v0.8.0/cargo-dist-aarch64-apple-darwin.tar.xz"
+      sha256 "234abe2bc5535ab6f13900814f0fa8fc2239b140fb4bbe9afe96399a3763588c"
     end
     on_intel do
-      url "https://github.com/axodotdev/cargo-dist/releases/download/v0.7.2/cargo-dist-x86_64-apple-darwin.tar.xz"
-      sha256 "f6152b9d519429da75154585acb159714c8eb138c852764f7f4d4cf74051b263"
+      url "https://github.com/axodotdev/cargo-dist/releases/download/v0.8.0/cargo-dist-x86_64-apple-darwin.tar.xz"
+      sha256 "3a131a65bef832a825ae2fd9f1a88b0637bf0122bae3cc79f01cb348365a1d44"
     end
   end
   on_linux do
     on_arm do
-      url "https://github.com/axodotdev/cargo-dist/releases/download/v0.7.2/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "bda5ce690ace7a507ef4e7971eafce43ecd6502effb974ed7522bfecdc37abdd"
+      url "https://github.com/axodotdev/cargo-dist/releases/download/v0.8.0/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "6efb39ebedb2dfb22023e5b31989ea4f277e82e6d0718ca97f2dee96c3ba6e52"
     end
     on_intel do
-      url "https://github.com/axodotdev/cargo-dist/releases/download/v0.7.2/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "1da4a41b0a73335ffda19610aa3b6f2be782e92ed030e6ecd372b7a47b1aee29"
+      url "https://github.com/axodotdev/cargo-dist/releases/download/v0.8.0/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "ea17dfbd0ca20d03c219eb362651f9364cd313488fc87c7afadb9409408da054"
     end
   end
   license "MIT OR Apache-2.0"
