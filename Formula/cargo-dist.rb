@@ -1,24 +1,24 @@
 class CargoDist < Formula
   desc "Shippable application packaging for Rust"
-  version "0.10.0"
+  version "0.11.0"
   on_macos do
     on_arm do
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_jgJmW7Pwj7KxnHR43Ec-X/cargo-dist-aarch64-apple-darwin.tar.xz"
-      sha256 "d7839751b1c6e14042134384dcbd1494e1903b5e6c2b53210a857e80c6e6d8f1"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_tb3_Np3lpfoRishxpiLS2/cargo-dist-aarch64-apple-darwin.tar.xz"
+      sha256 "6480e35dbcbbbefca5eedd6317e0471b714395de319d028ac6749f1c2d0afdbc"
     end
     on_intel do
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_jgJmW7Pwj7KxnHR43Ec-X/cargo-dist-x86_64-apple-darwin.tar.xz"
-      sha256 "e6a5c295e0f1befc2bc00d480fa7af903b11a743e7c285cc03da849a8fe34ff9"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_tb3_Np3lpfoRishxpiLS2/cargo-dist-x86_64-apple-darwin.tar.xz"
+      sha256 "36e4e95e271f022347c7acecd886296acc1601fbf7fa4e47bba5edf14088bffa"
     end
   end
   on_linux do
     on_arm do
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_jgJmW7Pwj7KxnHR43Ec-X/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "96522c31b891121c852b52a342fd91f49b3e4e75fcf0f0795e44f667360c9876"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_tb3_Np3lpfoRishxpiLS2/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "454151bc1f6930e464cec435528afdec2a9f91ebc40051a9fdf31fedb352bcaa"
     end
     on_intel do
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_jgJmW7Pwj7KxnHR43Ec-X/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "4eefdf0704e4dcbc4fe3db55f2a4e92045c4f9e1a9ee488c95a09f2331af0a3a"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_tb3_Np3lpfoRishxpiLS2/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "2fde7a0e7e5c4ad45b49c974cc8dff40311bada1a9a4e9a7db74692a3e630e1d"
     end
   end
   license "MIT OR Apache-2.0"
