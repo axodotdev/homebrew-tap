@@ -1,18 +1,41 @@
 class Oranda < Formula
   desc "🎁 generate beautiful landing pages for your projects"
   homepage "https://opensource.axo.dev/oranda"
-  if Hardware::CPU.type == :arm
-    url "https://github.com/axodotdev/oranda/releases/download/v0.6.1/oranda-aarch64-apple-darwin.tar.gz"
-    sha256 "0e8169002de70a2e19cf28f6aa5c5000e2d17ebc523120dea57fab732881959f"
-  else
-    url "https://github.com/axodotdev/oranda/releases/download/v0.6.1/oranda-x86_64-apple-darwin.tar.gz"
-    sha256 "48716a862143dde91bfd4e1577dc72e401990313c247c732908b9f7687711332"
+  version "0.6.2"
+  on_macos do
+    on_arm do
+      url "https://axodotdev.artifacts.axodotdev.host/oranda/ax_XYM-QyHzvwo-zm0daGd9e/oranda-aarch64-apple-darwin.tar.gz"
+      sha256 "f05b339385b6f3e07563f8febea8cd8246e3723ceacdc45c8fd2fd159b6a7245"
+    end
+    on_intel do
+      url "https://axodotdev.artifacts.axodotdev.host/oranda/ax_XYM-QyHzvwo-zm0daGd9e/oranda-x86_64-apple-darwin.tar.gz"
+      sha256 "dcf19cd6f039fa30a2b87f36e3657e05606996d32541dcff925dcd5171473f26"
+    end
   end
-  version "0.6.1"
+  on_linux do
+    on_intel do
+      url "https://axodotdev.artifacts.axodotdev.host/oranda/ax_XYM-QyHzvwo-zm0daGd9e/oranda-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "a4ba6b0923ad7c380b17872935c0b0d32ba483bbba27571cf519f38ea7e6a2bc"
+    end
+  end
   license "MIT OR Apache-2.0"
 
   def install
-    bin.install "oranda"
+    on_macos do
+      on_arm do
+        bin.install "oranda"
+      end
+    end
+    on_macos do
+      on_intel do
+        bin.install "oranda"
+      end
+    end
+    on_linux do
+      on_intel do
+        bin.install "oranda"
+      end
+    end
 
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
