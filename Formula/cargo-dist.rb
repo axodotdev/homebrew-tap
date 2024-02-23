@@ -1,24 +1,24 @@
 class CargoDist < Formula
   desc "Shippable application packaging for Rust"
-  version "0.11.0"
+  version "0.11.1"
   on_macos do
     on_arm do
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_tb3_Np3lpfoRishxpiLS2/cargo-dist-aarch64-apple-darwin.tar.xz"
-      sha256 "6480e35dbcbbbefca5eedd6317e0471b714395de319d028ac6749f1c2d0afdbc"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_liT4KbTVNjUsFWPi-fDQF/cargo-dist-aarch64-apple-darwin.tar.xz"
+      sha256 "e8813ce050a07c9ddb19eeefa9e26b8bfb56fe62f66c32de743a00c9bba77326"
     end
     on_intel do
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_tb3_Np3lpfoRishxpiLS2/cargo-dist-x86_64-apple-darwin.tar.xz"
-      sha256 "36e4e95e271f022347c7acecd886296acc1601fbf7fa4e47bba5edf14088bffa"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_liT4KbTVNjUsFWPi-fDQF/cargo-dist-x86_64-apple-darwin.tar.xz"
+      sha256 "5d124f4b8b2dcdba1844bec0c2f2ab74601ce26d85ed47590c31993d26163c67"
     end
   end
   on_linux do
     on_arm do
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_tb3_Np3lpfoRishxpiLS2/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "454151bc1f6930e464cec435528afdec2a9f91ebc40051a9fdf31fedb352bcaa"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_liT4KbTVNjUsFWPi-fDQF/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "e6d39732af06c4fcb3d9bee88f651e2ce9085263533d5b34d639b61c7d73bfac"
     end
     on_intel do
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_tb3_Np3lpfoRishxpiLS2/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "2fde7a0e7e5c4ad45b49c974cc8dff40311bada1a9a4e9a7db74692a3e630e1d"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_liT4KbTVNjUsFWPi-fDQF/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "9446ddb4852a2b2c46354278dddff16c11306e628cc32351dfc311bb4be85bc6"
     end
   end
   license "MIT OR Apache-2.0"
