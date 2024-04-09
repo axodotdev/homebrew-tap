@@ -1,48 +1,41 @@
 class CargoDist < Formula
   desc "Shippable application packaging for Rust"
-  version "0.12.2"
-  on_macos do
-    on_arm do
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_s-6JvvW3s0ZRQmipdqLNV/cargo-dist-aarch64-apple-darwin.tar.xz"
-      sha256 "25a6192959bcc318adb5ef801cca0fdcf6c574860e9b8e83a54a8f757a4ea254"
+  homepage "https://opensource.axo.dev/cargo-dist/"
+  version "0.13.0"
+  if OS.mac?
+    if Hardware::CPU.arm?
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_mVR7oi54loWbKkB2Rpem1/cargo-dist-aarch64-apple-darwin.tar.xz"
+      sha256 "e447dc0d973759b35a2534ba393eff518d45d5b3d57af03ec96985c0cf5a41ff"
     end
-    on_intel do
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_s-6JvvW3s0ZRQmipdqLNV/cargo-dist-x86_64-apple-darwin.tar.xz"
-      sha256 "bcda24a71b60e543738e2169b036d296e8f0d614214c041def5423a82c99c55f"
+    if Hardware::CPU.intel?
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_mVR7oi54loWbKkB2Rpem1/cargo-dist-x86_64-apple-darwin.tar.xz"
+      sha256 "e1fe83e98ef3fc5627f4e42164c83c41d8bead6aaf4e60d8d0092f22735112d3"
     end
   end
-  on_linux do
-    on_arm do
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_s-6JvvW3s0ZRQmipdqLNV/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "9df327e7c542df6f09573b8f1b2bd4fbbe0dd8cf8acab97fe2c685979af92717"
+  if OS.linux?
+    if Hardware::CPU.arm?
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_mVR7oi54loWbKkB2Rpem1/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "3295a696499a8b2b18eeeccae633f787fbd1a3bec2060b1c3f29330478010c49"
     end
-    on_intel do
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_s-6JvvW3s0ZRQmipdqLNV/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "2716df99a5bb75bb6037f797b03b2501886319791c93612be8fc73783d830ca9"
+    if Hardware::CPU.intel?
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_mVR7oi54loWbKkB2Rpem1/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "39cb6563c88719f3df20467da34710957295f42c38eed81262fb8406e8a83f7a"
     end
   end
   license "MIT OR Apache-2.0"
 
   def install
-    on_macos do
-      on_arm do
-        bin.install "cargo-dist"
-      end
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "cargo-dist"
     end
-    on_macos do
-      on_intel do
-        bin.install "cargo-dist"
-      end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "cargo-dist"
     end
-    on_linux do
-      on_arm do
-        bin.install "cargo-dist"
-      end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "cargo-dist"
     end
-    on_linux do
-      on_intel do
-        bin.install "cargo-dist"
-      end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "cargo-dist"
     end
 
     # Homebrew will automatically install these, so we don't need to do that
@@ -51,6 +44,6 @@ class CargoDist < Formula
 
     # Install any leftover files in pkgshare; these are probably config or
     # sample files.
-    pkgshare.install *leftover_contents unless leftover_contents.empty?
+    pkgshare.install(*leftover_contents) unless leftover_contents.empty?
   end
 end
