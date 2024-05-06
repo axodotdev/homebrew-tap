@@ -1,28 +1,45 @@
 class CargoDist < Formula
   desc "Shippable application packaging for Rust"
   homepage "https://opensource.axo.dev/cargo-dist/"
-  version "0.13.3"
+  version "0.14.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_O_EfE3yIKZTNpWtaUhlHp/cargo-dist-aarch64-apple-darwin.tar.xz"
-      sha256 "95a41627779a3e557ca9e418bd9c2dc7eac0049aeac303dbd40f91e9a6cdad2a"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_B12MhYBvh6yB1atpkQddU/cargo-dist-aarch64-apple-darwin.tar.xz"
+      sha256 "bbb2232631d97f26d677c3bb4d5f8122520498571af46cdb34ca5827aa32b1c0"
     end
     if Hardware::CPU.intel?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_O_EfE3yIKZTNpWtaUhlHp/cargo-dist-x86_64-apple-darwin.tar.xz"
-      sha256 "609f65b1747c273030e3237ec46f052b20b5f668cdc7b7da5f32b3dfcdeed572"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_B12MhYBvh6yB1atpkQddU/cargo-dist-x86_64-apple-darwin.tar.xz"
+      sha256 "79c301c1454625d132b203009c25c60a2124b69ad56dab9da3d8987b5749d274"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_O_EfE3yIKZTNpWtaUhlHp/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "a048a6f4ae17150a8f13599aa523bb8d14e4ee028c30c307311683bda1a92167"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_B12MhYBvh6yB1atpkQddU/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "cddacbf1cfe11ec925d4a409aec539d4ed331019e51487a2c5729fafd41afd9b"
     end
     if Hardware::CPU.intel?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_O_EfE3yIKZTNpWtaUhlHp/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "8c4f961a67ffc61efd69e3bc45681e67d6235e7ad3a5f8072c4ce3ce3fbf0c8b"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_B12MhYBvh6yB1atpkQddU/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "38036ca69606f1b782e2dc6d192c963aeb33c8f3424e11be671d8ffef09b1711"
     end
   end
   license "MIT OR Apache-2.0"
+
+  BINARY_ALIASES = {"aarch64-apple-darwin": {}, "aarch64-unknown-linux-gnu": {}, "aarch64-unknown-linux-musl-dynamic": {}, "aarch64-unknown-linux-musl-static": {}, "x86_64-apple-darwin": {}, "x86_64-pc-windows-gnu": {}, "x86_64-unknown-linux-gnu": {}, "x86_64-unknown-linux-musl-dynamic": {}, "x86_64-unknown-linux-musl-static": {}}
+
+  def target_triple
+    cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
+    os = OS.mac? ? "apple-darwin" : "unknown-linux-gnu"
+
+    "#{cpu}-#{os}"
+  end
+
+  def install_binary_aliases!
+    BINARY_ALIASES[target_triple.to_sym].each do |source, dests|
+      dests.each do |dest|
+        bin.install_symlink bin/source.to_s => dest
+      end
+    end
+  end
 
   def install
     if OS.mac? && Hardware::CPU.arm?
@@ -37,6 +54,8 @@ class CargoDist < Formula
     if OS.linux? && Hardware::CPU.intel?
       bin.install "cargo-dist"
     end
+
+    install_binary_aliases!
 
     # Homebrew will automatically install these, so we don't need to do that
     doc_files = Dir["README.*", "readme.*", "LICENSE", "LICENSE.*", "CHANGELOG.*"]
