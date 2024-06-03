@@ -1,25 +1,25 @@
 class Axolotlsay < Formula
   desc "💬 a CLI for learning to distribute CLIs in rust"
   homepage "https://github.com/axodotdev/axolotlsay"
-  version "0.2.2"
+  version "0.2.3"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/axodotdev/axolotlsay/releases/download/v0.2.2/axolotlsay-aarch64-apple-darwin.tar.gz"
-      sha256 "b4e7f4bc41b377bde0ad48a301f082c4e5824c15f16a3c339fce1225a2eae4fc"
+      url "https://github.com/axodotdev/axolotlsay/releases/download/v0.2.3/axolotlsay-aarch64-apple-darwin.tar.gz"
+      sha256 "cf3173d8ce125a85b2a08d8e261e85ae18eb95b900fa8d2c46e6182c5e3ce46f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/axodotdev/axolotlsay/releases/download/v0.2.2/axolotlsay-x86_64-apple-darwin.tar.gz"
-      sha256 "9b7f9b58db1965130884e6000c4ac1ebd658abaa279437013a420447f7d430ef"
+      url "https://github.com/axodotdev/axolotlsay/releases/download/v0.2.3/axolotlsay-x86_64-apple-darwin.tar.gz"
+      sha256 "331e1666b4f49471ec63f4914038d876b72267b9ab845ebfc90eb0e73c116bc0"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/axodotdev/axolotlsay/releases/download/v0.2.2/axolotlsay-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "d4402485da5bea8076442c100ed9b046a794a3c304b0cab29c83b32a3c18eecb"
+      url "https://github.com/axodotdev/axolotlsay/releases/download/v0.2.3/axolotlsay-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "13846664f6d6f3c8f43c51efec924cd9b0bcc0b85e961a8779614306772ca358"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/axodotdev/axolotlsay/releases/download/v0.2.2/axolotlsay-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "1c2ed6736f9a92b4a8a0bd35e6099f714ccc88e9cb4bae084af4ac3f007ac7cc"
+      url "https://github.com/axodotdev/axolotlsay/releases/download/v0.2.3/axolotlsay-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "94fc3722636695a8390b79de2664b79a827429bc3f92ac173b96078ab2bba848"
     end
   end
   license "MIT OR Apache-2.0"
