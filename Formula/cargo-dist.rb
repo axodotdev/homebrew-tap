@@ -1,25 +1,25 @@
 class CargoDist < Formula
   desc "Shippable application packaging for Rust"
   homepage "https://opensource.axo.dev/cargo-dist/"
-  version "0.19.0"
+  version "0.19.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_1-APrvLhhi2VuJO2lz4pu/cargo-dist-aarch64-apple-darwin.tar.xz"
-      sha256 "b80e5055f2cdc7edec169ccc289fc8dd311fffc8b1aae7e80d958840182ee073"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_q5zFH9T0X0cpX2CXSLVde/cargo-dist-aarch64-apple-darwin.tar.xz"
+      sha256 "8c5c3c1856fcf23e8742655f9c4018dac612470c36239d5f5b2d898594560e48"
     end
     if Hardware::CPU.intel?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_1-APrvLhhi2VuJO2lz4pu/cargo-dist-x86_64-apple-darwin.tar.xz"
-      sha256 "14ed13936b90f60e0569cfd615f9b172b085d264cdf92503ba9b0c0fca89d01c"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_q5zFH9T0X0cpX2CXSLVde/cargo-dist-x86_64-apple-darwin.tar.xz"
+      sha256 "428d94b1f9db0dda487ea6f1be0936c7f8b4e0dfa4f016c0a845b2a6ff14d33d"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_1-APrvLhhi2VuJO2lz4pu/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "9a87e3d2842aae270cd51053dfcc9b4f58ef0dd4baeaeda00853cb8f3b56f686"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_q5zFH9T0X0cpX2CXSLVde/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "7a9e3cf82230ff7fb2adf5dda7c055c9d331c7aa939443a139db889b9eab4ab5"
     end
     if Hardware::CPU.intel?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_1-APrvLhhi2VuJO2lz4pu/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "b023ead43ae21974499e58fc686c701e5952f18bbc25d080bd79116552d40188"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_q5zFH9T0X0cpX2CXSLVde/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "3d4da760479f80186f98122f2643fb11a1d9c1b2f5f1302e4fa0526987085d85"
     end
   end
   license "MIT OR Apache-2.0"
