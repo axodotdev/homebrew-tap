@@ -1,25 +1,25 @@
 class Oranda < Formula
   desc "🎁 generate beautiful landing pages for your projects"
   homepage "https://opensource.axo.dev/oranda"
-  version "0.6.4"
+  version "0.6.5"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://axodotdev.artifacts.axodotdev.host/oranda/ax_xYx-vLgTIL61Oe76VSbNv/oranda-aarch64-apple-darwin.tar.gz"
-      sha256 "2ab32a7dd08dfc446604a5575a22fe807337b9ef4ea0c6a4b6af25cc03af660b"
+      url "https://axodotdev.artifacts.axodotdev.host/oranda/ax_Vu5Pz4aAI6baDUKPCU4eQ/oranda-aarch64-apple-darwin.tar.gz"
+      sha256 "0c2361627b4ce922cfc6c607b1760576692ef2c2c36834c5bb61e26854ecbded"
     end
     if Hardware::CPU.intel?
-      url "https://axodotdev.artifacts.axodotdev.host/oranda/ax_xYx-vLgTIL61Oe76VSbNv/oranda-x86_64-apple-darwin.tar.gz"
-      sha256 "8036df08675d71da9161946f79932fed410a4f64ba7ef8e7a21ac1b84ba326ec"
+      url "https://axodotdev.artifacts.axodotdev.host/oranda/ax_Vu5Pz4aAI6baDUKPCU4eQ/oranda-x86_64-apple-darwin.tar.gz"
+      sha256 "8a786557aeece0bcc7e06b7be7d5ebb757cf9943a85bbcf2be2801efb1ac1611"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://axodotdev.artifacts.axodotdev.host/oranda/ax_xYx-vLgTIL61Oe76VSbNv/oranda-aarch64-unknown-linux-gnu.tar.gz"
-      sha256 "85a1d30963d409c98edb373810131ed028b5ed204132ee69b27a219a0be945c6"
+      url "https://axodotdev.artifacts.axodotdev.host/oranda/ax_Vu5Pz4aAI6baDUKPCU4eQ/oranda-aarch64-unknown-linux-gnu.tar.gz"
+      sha256 "07d1cc07964c53f674da152ef5eb5e213db7f291934440508f64c58a86a1d27a"
     end
     if Hardware::CPU.intel?
-      url "https://axodotdev.artifacts.axodotdev.host/oranda/ax_xYx-vLgTIL61Oe76VSbNv/oranda-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "8299c38d9c81930a514a3e6acea81db2e4d1489d7cccb2809a1fe1d9682483bc"
+      url "https://axodotdev.artifacts.axodotdev.host/oranda/ax_Vu5Pz4aAI6baDUKPCU4eQ/oranda-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "2db065e8b06253526a81595b9312b8c4468ff42f3f9fbe50a6ff21a42d3516d1"
     end
   end
   license "MIT OR Apache-2.0"
