@@ -1,21 +1,21 @@
 class NumbersGuy < Formula
   desc "📈 a little CLI for fetching release and release asset data from GitHub"
   homepage "https://github.com/axodotdev/numbers-guy"
-  version "0.1.0"
+  version "0.1.1"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/axodotdev/numbers-guy/releases/download/v0.1.0/numbers-guy-aarch64-apple-darwin.tar.gz"
-      sha256 "1be58b54cb0c372acd373c2b93478b7d2c49dc5de1ee267f5c234b593f844421"
+      url "https://github.com/axodotdev/numbers-guy/releases/download/v0.1.1/numbers-guy-aarch64-apple-darwin.tar.gz"
+      sha256 "4e99b00464290565d484574059042ca9769bf7a6b7800e36da39a5a78b744a7a"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/axodotdev/numbers-guy/releases/download/v0.1.0/numbers-guy-x86_64-apple-darwin.tar.gz"
-      sha256 "45361e5f619965b94ebf08a76a786d607a994f9191104d1c432bb354e3e94bb7"
+      url "https://github.com/axodotdev/numbers-guy/releases/download/v0.1.1/numbers-guy-x86_64-apple-darwin.tar.gz"
+      sha256 "caa83b891ca94ef97cdf24f08050e091d2a00151a9fe8c62302ca06e66a39e65"
     end
   end
   if OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/axodotdev/numbers-guy/releases/download/v0.1.0/numbers-guy-x86_64-unknown-linux-gnu.tar.gz"
-      sha256 "b5cc585eab8439eafd9a590679d523144d761da73f9b1392d1f58ea7b1216a8b"
+      url "https://github.com/axodotdev/numbers-guy/releases/download/v0.1.1/numbers-guy-x86_64-unknown-linux-gnu.tar.gz"
+      sha256 "f50534acea2b9a9192578fc651daf60ec73b52a15f9eb68b0604c84ff94e9937"
     end
   end
 
