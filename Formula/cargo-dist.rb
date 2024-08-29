@@ -1,30 +1,40 @@
 class CargoDist < Formula
   desc "Shippable application packaging for Rust"
   homepage "https://opensource.axo.dev/cargo-dist/"
-  version "0.21.1"
+  version "0.22.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_pbIbs9pDImvejI04EoJRA/cargo-dist-aarch64-apple-darwin.tar.xz"
-      sha256 "22ec3d221c718f57b6b87d875b10deb08f9222b7d67072e8acd36246bd43a810"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_TD6oDvmtnt952JNUb75Ui/cargo-dist-aarch64-apple-darwin.tar.xz"
+      sha256 "2edd06a991ce1e576f20b0e3859e4607edc4a7452c2035d980230838ef721fdd"
     end
     if Hardware::CPU.intel?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_pbIbs9pDImvejI04EoJRA/cargo-dist-x86_64-apple-darwin.tar.xz"
-      sha256 "8eaff9cd6940a5cc3931757af9d6569f3d11e8aa7e53df110d630769c7849830"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_TD6oDvmtnt952JNUb75Ui/cargo-dist-x86_64-apple-darwin.tar.xz"
+      sha256 "9b5ef21d37f09dc4d8b46f66f35af12d411ea4dcff017711f0fb9af094f0c7e6"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_pbIbs9pDImvejI04EoJRA/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "ff45f5b763bfc890150438e2eea30c210603896b474d924f1862470bb0989f49"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_TD6oDvmtnt952JNUb75Ui/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "56f037c72096b39af67aed8c00b40b89340b5c034398ec7297c33c84ccc1fceb"
     end
     if Hardware::CPU.intel?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_pbIbs9pDImvejI04EoJRA/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "11bcb8e2c41ea1a3e25d4fc1bbd18f791fab85db4f8b30a01488d4fd23ee7cb7"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_TD6oDvmtnt952JNUb75Ui/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "e0c3410d9a17fbb54990f40951eaa88d89c9da5b406d8e6250c75642fb3fa7af"
     end
   end
-  license "MIT OR Apache-2.0"
+  license any_of: ["MIT", "Apache-2.0"]
 
-  BINARY_ALIASES = {"aarch64-apple-darwin": {}, "aarch64-unknown-linux-gnu": {}, "aarch64-unknown-linux-musl-dynamic": {}, "aarch64-unknown-linux-musl-static": {}, "x86_64-apple-darwin": {}, "x86_64-pc-windows-gnu": {}, "x86_64-unknown-linux-gnu": {}, "x86_64-unknown-linux-musl-dynamic": {}, "x86_64-unknown-linux-musl-static": {}}
+  BINARY_ALIASES = {
+    "aarch64-apple-darwin":               {},
+    "aarch64-unknown-linux-gnu":          {},
+    "aarch64-unknown-linux-musl-dynamic": {},
+    "aarch64-unknown-linux-musl-static":  {},
+    "x86_64-apple-darwin":                {},
+    "x86_64-pc-windows-gnu":              {},
+    "x86_64-unknown-linux-gnu":           {},
+    "x86_64-unknown-linux-musl-dynamic":  {},
+    "x86_64-unknown-linux-musl-static":   {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -42,18 +52,10 @@ class CargoDist < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "cargo-dist"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "cargo-dist"
-    end
-    if OS.linux? && Hardware::CPU.arm?
-      bin.install "cargo-dist"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "cargo-dist"
-    end
+    bin.install "cargo-dist" if OS.mac? && Hardware::CPU.arm?
+    bin.install "cargo-dist" if OS.mac? && Hardware::CPU.intel?
+    bin.install "cargo-dist" if OS.linux? && Hardware::CPU.arm?
+    bin.install "cargo-dist" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
