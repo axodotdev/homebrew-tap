@@ -1,39 +1,75 @@
 class CargoDist < Formula
   desc "Shippable application packaging for Rust"
   homepage "https://opensource.axo.dev/cargo-dist/"
-  version "0.23.0"
+  version "0.24.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_yDz9fo_n8haXLAFaV4bsN/cargo-dist-aarch64-apple-darwin.tar.xz"
-      sha256 "ba1728a1b44b9ebf04354829594f1ac02cfd906cc7beb0f56c6c21fa2bb53579"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_O17u8Ye5cLOueLyVFSKU_/cargo-dist-aarch64-apple-darwin.tar.xz"
+      sha256 "bc04a49c49f4a36b742e6d0087ba9a35ccc40873dfd2988918e39746469f2c4b"
     end
     if Hardware::CPU.intel?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_yDz9fo_n8haXLAFaV4bsN/cargo-dist-x86_64-apple-darwin.tar.xz"
-      sha256 "ef98e07c0083198f21f551d16ba0256ce9919a3e782e917a9dd9ad4674edd844"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_O17u8Ye5cLOueLyVFSKU_/cargo-dist-x86_64-apple-darwin.tar.xz"
+      sha256 "60db0a462253d9dbf6de6fd0680c49d7978f42eed0952ca2b2b43a3eed4b5108"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_yDz9fo_n8haXLAFaV4bsN/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "65a168711a4dc4907a19a3f5ebed0f36da57b294f08b47ce58417a55e33af17c"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_O17u8Ye5cLOueLyVFSKU_/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "88432327a54cfb4f7088a2066fcaacf6028f08bd84219a78aa7dcb5b8f023de2"
     end
     if Hardware::CPU.intel?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_yDz9fo_n8haXLAFaV4bsN/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "988b33a5ca293e26367520c4980c2757e92bff5f79a5643b902cc65060de15f0"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_O17u8Ye5cLOueLyVFSKU_/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "48073c09c7bf3f768dc2489383894f88d3160358fb0f85c5851d4aeb05850cdf"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin":               {},
-    "aarch64-unknown-linux-gnu":          {},
-    "aarch64-unknown-linux-musl-dynamic": {},
-    "aarch64-unknown-linux-musl-static":  {},
-    "x86_64-apple-darwin":                {},
-    "x86_64-pc-windows-gnu":              {},
-    "x86_64-unknown-linux-gnu":           {},
-    "x86_64-unknown-linux-musl-dynamic":  {},
-    "x86_64-unknown-linux-musl-static":   {},
+    "aarch64-apple-darwin":               {
+      dist: [
+        "cargo-dist",
+      ],
+    },
+    "aarch64-unknown-linux-gnu":          {
+      dist: [
+        "cargo-dist",
+      ],
+    },
+    "aarch64-unknown-linux-musl-dynamic": {
+      dist: [
+        "cargo-dist",
+      ],
+    },
+    "aarch64-unknown-linux-musl-static":  {
+      dist: [
+        "cargo-dist",
+      ],
+    },
+    "x86_64-apple-darwin":                {
+      dist: [
+        "cargo-dist",
+      ],
+    },
+    "x86_64-pc-windows-gnu":              {
+      "dist.exe": [
+        "cargo-dist.exe",
+      ],
+    },
+    "x86_64-unknown-linux-gnu":           {
+      dist: [
+        "cargo-dist",
+      ],
+    },
+    "x86_64-unknown-linux-musl-dynamic":  {
+      dist: [
+        "cargo-dist",
+      ],
+    },
+    "x86_64-unknown-linux-musl-static":   {
+      dist: [
+        "cargo-dist",
+      ],
+    },
   }.freeze
 
   def target_triple
@@ -52,10 +88,10 @@ class CargoDist < Formula
   end
 
   def install
-    bin.install "cargo-dist" if OS.mac? && Hardware::CPU.arm?
-    bin.install "cargo-dist" if OS.mac? && Hardware::CPU.intel?
-    bin.install "cargo-dist" if OS.linux? && Hardware::CPU.arm?
-    bin.install "cargo-dist" if OS.linux? && Hardware::CPU.intel?
+    bin.install "dist" if OS.mac? && Hardware::CPU.arm?
+    bin.install "dist" if OS.mac? && Hardware::CPU.intel?
+    bin.install "dist" if OS.linux? && Hardware::CPU.arm?
+    bin.install "dist" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
