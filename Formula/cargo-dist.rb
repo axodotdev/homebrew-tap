@@ -1,25 +1,25 @@
 class CargoDist < Formula
   desc "Shippable application packaging for Rust"
   homepage "https://opensource.axo.dev/cargo-dist/"
-  version "0.26.1"
+  version "0.27.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax__ku0oaE1JEf4SNn_OPCQK/cargo-dist-aarch64-apple-darwin.tar.xz"
-      sha256 "dcd178ecd8f1dc23a334b0212b66eeafd726dcbb255c57aa709815525152a494"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_h9BLWkrLYfa4hrRICo0QO/cargo-dist-aarch64-apple-darwin.tar.xz"
+      sha256 "e7b93c52b1fbbaf3f638b928b5ac6730d80b5879a9da4b757f30ee45294f1531"
     end
     if Hardware::CPU.intel?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax__ku0oaE1JEf4SNn_OPCQK/cargo-dist-x86_64-apple-darwin.tar.xz"
-      sha256 "5b7c73c6aa30bc2c6c9d47e6be6200243be78c963efb6b1f70d314260bcca66e"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_h9BLWkrLYfa4hrRICo0QO/cargo-dist-x86_64-apple-darwin.tar.xz"
+      sha256 "a0f05341ffdcd14082a7c46a48bb29910dfacd3ab462304ad1d3103ee76b176e"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax__ku0oaE1JEf4SNn_OPCQK/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "2ad5ea2fa7fe30ad6869ee7cbff0a6e13308d271f49c76c5915447461c45061b"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_h9BLWkrLYfa4hrRICo0QO/cargo-dist-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "7855a101ad34e38815d8dd3088fc56a33d44874a361bb7743c136e82b633d550"
     end
     if Hardware::CPU.intel?
-      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax__ku0oaE1JEf4SNn_OPCQK/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "67cf5d654b2411fe01448da118df33f20004c9be2d5faae2384a926167a0800e"
+      url "https://axodotdev.artifacts.axodotdev.host/cargo-dist/ax_h9BLWkrLYfa4hrRICo0QO/cargo-dist-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "a954001ef4f61f80e8a175c8107fe3e72fa86d1e88428f5894eba977dd652f15"
     end
   end
   license any_of: ["MIT", "Apache-2.0"]
